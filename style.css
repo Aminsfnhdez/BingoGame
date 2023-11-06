@@ -1,0 +1,128 @@
+/* Estilo para las letras B, I, N, G, O */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilo para los botones */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #0074d9;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#agregar-cartilla {
+    background-color: #2ecc71;
+}
+
+#agregar-cartilla:hover {
+    background-color: #27ae60;
+}
+
+#iniciar {
+    background-color: #e74c3c;
+}
+
+#iniciar:hover {
+    background-color: #c0392b;
+}
+
+
+/* Estilo para las cartillas de Bingo */
+#cartillas {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.cartilla {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 32%;
+    /* Cada cartilla ocupa un tercio del ancho de la pantalla */
+    box-sizing: border-box;
+}
+
+.cartilla h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.cartilla .letras {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartilla .letra {
+    text-align: center;
+    margin: 0 10px;
+}
+
+.cartilla ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cartilla ul li {
+    display: block;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.cartilla ul li.red {
+    color: red;
+    /* Cambiar el color a rojo cuando coincide con la bola */
+}
+
+/* Estilo para el progreso del juego */
+#progreso {
+    background-color: #e0e0e0;
+    padding: 20px;
+    margin: 10px;
+    width: 100%;
+}
+
+#progreso h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#bolas-seleccionadas {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#bolas-seleccionadas li {
+    display: block;
+    font-size: 18px;
+    margin: 5px 0;
+}

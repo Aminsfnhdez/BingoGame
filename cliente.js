@@ -112,6 +112,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function actualizarProgreso(bola) {
+    console.log("Actualizando progreso con la bola:", bola);
+
     const progresoUl = document.getElementById("bolas-seleccionadas");
     const li = document.createElement("li");
     li.textContent = `Bola seleccionada: ${bola}`;
@@ -119,27 +121,28 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function marcarBolaEnCartillas(bola) {
-    for (let letra in cartilla) {
-      const ul = document.getElementById(`cartilla-${letra.toLowerCase()}`);
+    const letra = bola[0];
+    const numero = bola.substring(1);
+  
+    for (let i = 0; i < cartillas.length; i++) {
+      const cartilla = cartillas[i];
+      const ul = cartilla.querySelector(`#cartilla-${letra.toLowerCase()}`);
       const liList = ul.getElementsByTagName("li");
-
+  
       for (let li of liList) {
-        if (li.textContent === bola.substring(1)) {
+        if (li.textContent === numero) {
           li.style.color = "red";
           break; // Detener el bucle una vez que se ha encontrado y marcado la bola
         }
       }
     }
 
-    // Agregar la bola seleccionada al conjunto de números seleccionados
-    numerosSeleccionados.add(bola);
-
-    // Verificar si se ha completado el juego
-    if (verificarCartillasCompletas()) {
-      mostrarMensaje("¡El juego de Bingo ha concluido!");
-      juegoIniciado = false; // Detener el juego al completarse
-    }
+  // Verificar si se ha completado el juego
+  if (verificarCartillasCompletas()) {
+    mostrarMensaje("¡El juego de Bingo ha concluido!");
+    juegoIniciado = false; // Detener el juego al completarse
   }
+}
 
   function mostrarMensaje(mensaje) {
     alert(mensaje);

@@ -56,7 +56,7 @@ async def manejar_cliente(websocket, path):
                 await client.send(json.dumps({"bola": bola}))
 
             # Simula un retraso antes de enviar la siguiente bola
-            await asyncio.sleep(5)
+            await asyncio.sleep(2)
 
     except websockets.exceptions.ConnectionClosed:
         # Cliente desconectado
@@ -68,4 +68,3 @@ start_server = websockets.serve(manejar_cliente, host, port)
 # Inicia el servidor
 asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()
-
